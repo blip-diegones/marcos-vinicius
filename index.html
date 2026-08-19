@@ -133,23 +133,24 @@
   .intent-btn{
     background:rgba(18,50,39,0.6); border:1px solid rgba(255,255,255,0.25);
     color:var(--white); padding:10px 14px; border-radius:var(--radius); font-size:13px;
-    text-align:center; cursor:pointer; transition:all .25s ease;
+    text-align:center; cursor:pointer; transition:all .25s ease; text-decoration:none;
+    display:inline-block;
   }
   .intent-btn:hover{background:var(--brass); color:var(--green-deep); border-color:var(--brass); font-weight:500;}
 
-  /* WAVE DIVIDER */
-  .wave-divider{position:relative; height:50px; overflow:hidden; background:var(--cream);}
-  .wave-divider svg{position:absolute; bottom:0; left:0; width:100%; height:100%;}
-  .wave-divider .ripple{fill:none; stroke:var(--brass); stroke-width:1; opacity:0.55;}
-
-  /* POR QUE O MARCOS */
+  /* POR QUE MARCOS */
   .por-que{padding:80px 0; background:var(--cream);}
   .por-que-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:30px; margin-top:40px;}
   .por-que-card{
     background:var(--white); padding:30px 24px; border-radius:var(--radius);
     border-bottom:3px solid var(--brass); box-shadow:0 4px 15px rgba(0,0,0,0.03);
   }
-  .por-que-card h3{font-size:18px; margin:12px 0 8px;}
+  .icon-wrap{
+    width:42px; height:42px; border-radius:var(--radius); background:rgba(200,155,60,0.12);
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+  }
+  .icon-wrap svg{width:22px; height:22px; fill:var(--brass);}
+  .por-que-card h3{font-size:18px; margin:0 0 8px;}
   .por-que-card p{font-size:13.5px; color:#4a524c; margin:0;}
 
   /* IMOVEIS */
@@ -162,14 +163,8 @@
   }
   .card:hover{transform:translateY(-6px);}
   
-  /* Fallback para imagens ausentes */
-  .card-media{position:relative; height:220px; background:#e2dad0; overflow:hidden;}
+  .card-media{position:relative; height:230px; background:#e2dad0; overflow:hidden;}
   .card-media img{width:100%; height:100%; object-fit:cover;}
-  .card-media-placeholder{
-    display:flex; align-items:center; justify-content:center; height:100%;
-    background:linear-gradient(135deg, #2a4e40, #123227); color:var(--brass-soft);
-    font-family:'Fraunces', serif; font-size:16px;
-  }
   .card-tag{
     position:absolute; top:12px; left:12px; background:var(--green-deep);
     color:var(--brass-soft); font-size:10px; letter-spacing:0.1em;
@@ -289,7 +284,7 @@
       <div class="intent-box">
         <span>O que você procura hoje?</span>
         <div class="intent-buttons">
-          <button class="intent-btn" onclick="openWA('Quero comprar um imóvel em São Lourenço')">🏡 Comprar</button>
+          <a href="#imoveis" class="intent-btn">🏡 Comprar</a>
           <button class="intent-btn" onclick="openWA('Procuro um imóvel para alugar')">🔑 Alugar</button>
           <button class="intent-btn" onclick="openWA('Quero colocar meu imóvel à venda')">📈 Vender</button>
           <button class="intent-btn" onclick="openWA('Gostaria de uma avaliação do meu imóvel')">📋 Avaliar</button>
@@ -305,22 +300,30 @@
       <h2>A segurança de quem entende o mercado local.</h2>
       <div class="por-que-grid">
         <div class="por-que-card">
-          <span style="font-size:24px;">📍</span>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
           <h3>Conhecimento Local</h3>
           <p>Entendimento real de cada bairro, infraestrutura e potencial de valorização em São Lourenço.</p>
         </div>
         <div class="por-que-card">
-          <span style="font-size:24px;">🤝</span>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
           <h3>Acompanhamento Direto</h3>
           <p>Comunicação clara e sem intermediários da primeira visita até a entrega das chaves.</p>
         </div>
         <div class="por-que-card">
-          <span style="font-size:24px;">📑</span>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          </div>
           <h3>Segurança Documental</h3>
           <p>Análise detalhada de certidões e contratos para garantir uma transação imobiliária sem riscos.</p>
         </div>
         <div class="por-que-card">
-          <span style="font-size:24px;">🎯</span>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+          </div>
           <h3>Curadoria Eficiente</h3>
           <p>Seleção alinhada exatamente ao seu perfil para otimizar seu tempo de busca.</p>
         </div>
@@ -343,8 +346,7 @@
         <article class="card">
           <div class="card-media">
             <span class="card-tag">Alto Padrão</span>
-            <img src="imovel-1.png" alt="Casa em Condomínio" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="card-media-placeholder" style="display:none;">Reserva da Serra</div>
+            <img src="imovel-1.jpg" alt="Casa em Condomínio - Reserva da Serra">
           </div>
           <div class="card-body">
             <div class="card-loc">Reserva da Serra</div>
@@ -362,8 +364,7 @@
         <article class="card">
           <div class="card-media">
             <span class="card-tag">Residencial</span>
-            <img src="imovel-2.png" alt="Casa no Bairro Federal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="card-media-placeholder" style="display:none;">Bairro Federal</div>
+            <img src="imovel-2.jpg" alt="Casa no Bairro Federal">
           </div>
           <div class="card-body">
             <div class="card-loc">Federal</div>
@@ -381,8 +382,7 @@
         <article class="card">
           <div class="card-media">
             <span class="card-tag">Lançamento</span>
-            <img src="imovel-3.png" alt="Sobrado na Vila Nova" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="card-media-placeholder" style="display:none;">Vila Nova</div>
+            <img src="imovel-3.jpg" alt="Sobrado na Vila Nova">
           </div>
           <div class="card-body">
             <div class="card-loc">Vila Nova</div>
@@ -410,7 +410,7 @@
       </div>
       <div class="depoimentos-grid">
         <div class="depoimento-card">
-          "O Marcos conduziu toda a negociação da nossa casa em São Lourenço com uma clareza incrível. Transmuta muita confiança e cuidou de cada detalhe da papelada."
+          "O Marcos conduziu toda a negociação da nossa casa em São Lourenço com uma clareza incrível. Transmite muita confiança e cuidou de cada detalhe da papelada."
           <span class="depoimento-autor">— Ricardo & Família</span>
         </div>
         <div class="depoimento-card">
@@ -425,7 +425,7 @@
   <section class="sobre" id="sobre">
     <div class="wrap sobre-grid">
       <div class="sobre-photo-wrap">
-        <img src="corretor.png" alt="Marcos Vinícius Corretor" onerror="this.style.display='none';">
+        <img src="corretor.jpg" alt="Marcos Vinícius Corretor">
       </div>
       <div class="sobre-text">
         <span class="eyebrow">Sobre o Corretor</span>
