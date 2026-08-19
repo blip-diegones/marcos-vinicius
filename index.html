@@ -227,13 +227,29 @@
   }
   .depoimento-autor{margin-top:18px; font-weight:600; font-size:13px; color:var(--green-deep); display:block;}
 
-  /* SOBRE */
+  /* SOBRE COM FOTO PNG SEM FUNDO */
   .sobre{background:var(--green-deep); color:var(--cream); padding:100px 0; position:relative;}
-  .sobre-grid{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:center;}
+  .sobre-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:flex-end;}
+  
   .sobre-photo-wrap{
-    background:linear-gradient(155deg, var(--brass) 0%, var(--brass-soft) 100%);
-    border-radius:var(--radius); padding:24px 20px 0; text-align:center;
+    position:relative;
+    background:radial-gradient(circle at bottom center, rgba(200,155,60,0.3) 0%, rgba(200,155,60,0.05) 60%, transparent 80%);
+    border-bottom:3px solid var(--brass);
+    border-radius:var(--radius);
+    padding-top:30px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
   }
+  
+  .sobre-photo-wrap img{
+    width:100%;
+    max-width:380px;
+    height:auto;
+    object-fit:contain;
+    filter:drop-shadow(0px 15px 25px rgba(0,0,0,0.45));
+  }
+
   .sobre-text .eyebrow{color:var(--brass-soft);}
   .sobre-text .eyebrow::before{background:var(--brass-soft);}
   .sobre-text h2{color:var(--cream); font-size:clamp(28px,3.5vw,42px); margin:16px 0 20px;}
@@ -481,9 +497,9 @@
   <section class="sobre" id="sobre">
     <div class="wrap sobre-grid">
       <div class="sobre-photo-wrap">
-        <img src="corretor.jpg" alt="Marcos Vinícius Corretor">
+        <img src="corretor.png" alt="Marcos Vinícius Corretor de Imóveis">
       </div>
-      <div class="sobre-text">
+      <div class="sobre-text" style="padding-bottom:20px;">
         <span class="eyebrow">Sobre o Corretor</span>
         <h2>Experiência digital ágil com o cuidado e a proximidade do Sul de Minas.</h2>
         <span class="creci-tag">CRECI-MG • Registro Ativo</span>
