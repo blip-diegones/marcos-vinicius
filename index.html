@@ -3,33 +3,32 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Marcos Vinícius Corretor de Imóveis — São Lourenço, MG</title>
-<meta name="description" content="Marcos Vinícius Corretor de Imóveis (CRECI-MG). Compra, venda e locação de imóveis em São Lourenço, MG com atendimento personalizado e transparência." />
+<title>Marcos Vinícius — Imóveis em São Lourenço, MG</title>
+<meta name="description" content="Marcos Vinícius Corretor de Imóveis (CRECI-MG). Curadoria e intermediação imobiliária de alto padrão em São Lourenço, MG." />
 
 <!-- Meta Tags Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Marcos Vinícius Corretor de Imóveis — São Lourenço, MG" />
-<meta property="og:description" content="Compra, venda e locação de imóveis em São Lourenço, MG com atendimento próximo e conhecimento local." />
+<meta property="og:title" content="Marcos Vinícius — Imóveis em São Lourenço, MG" />
+<meta property="og:description" content="Atendimento boutique, curadoria imobiliária e transparência jurídica no Sul de Minas." />
 <meta property="og:image" content="cidade-1.jpg" />
 
 <link rel="preload" as="image" href="cidade-1.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --green-deep:#123227;
-    --green-mid:#1c4636;
-    --cream:#F6F1E4;
-    --cream-2:#EFE7D3;
-    --ink:#17211C;
+    --green-deep:#0B231B;
+    --green-mid:#16392C;
+    --cream:#F6F2E8;
+    --cream-2:#EAE3D2;
+    --ink:#121A16;
     --brass:#C89B3C;
-    --brass-soft:#E4C877;
-    --sage:#7FA69C;
+    --brass-soft:#E2C882;
     --white:#FFFFFF;
-    --radius:6px;
-    --maxw:1220px;
+    --radius:4px;
+    --maxw:1260px;
   }
 
   *{box-sizing:border-box;}
@@ -37,275 +36,318 @@
   body{
     margin:0; background:var(--cream); color:var(--ink);
     font-family:'Jost', sans-serif; font-weight:400; line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
   img{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
 
   h1,h2,h3,h4{
-    font-family:'Fraunces', serif; font-weight:450; margin:0;
-    color:var(--green-deep); letter-spacing:-0.01em;
+    font-family:'Fraunces', serif; font-weight:400; margin:0;
+    color:var(--green-deep); letter-spacing:-0.015em;
   }
 
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 36px;}
 
   .eyebrow{
-    font-family:'Jost', sans-serif; text-transform:uppercase; letter-spacing:0.25em;
-    font-size:11.5px; color:var(--brass); font-weight:600; display:inline-flex;
+    font-family:'Jost', sans-serif; text-transform:uppercase; letter-spacing:0.28em;
+    font-size:11px; color:var(--brass); font-weight:600; display:inline-flex;
     align-items:center; gap:12px;
   }
-  .eyebrow::before{content:""; width:26px; height:1px; background:var(--brass); display:inline-block;}
+  .eyebrow::before{content:""; width:28px; height:1px; background:var(--brass); display:inline-block;}
 
-  /* HEADER GRANDIOSO */
+  /* 🟢 2. HEADER TRANSPARENTE E ASSINATURA DE MARCA */
   header{
     position:fixed; top:0; left:0; right:0; z-index:100;
-    transition:all .35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition:all .4s cubic-bezier(0.16, 1, 0.3, 1);
+    background:transparent;
   }
   
-  .top-bar{
-    background:rgba(10, 30, 23, 0.65);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(200, 155, 60, 0.15);
-    padding:6px 0; font-size:11px; color:var(--brass-soft);
-    letter-spacing:0.12em; text-transform:uppercase;
-  }
-  .top-bar .wrap{display:flex; justify-content:space-between; align-items:center;}
-  
-  .nav-body{padding:18px 0; transition:padding .35s ease;}
+  .nav-body{padding:32px 0; transition:padding .4s ease, background .4s ease;}
   nav{display:flex; align-items:center; justify-content:space-between;}
 
   header.scrolled{
-    background:rgba(18,50,39,0.97);
-    backdrop-filter:blur(12px); box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    background:rgba(11, 35, 27, 0.94);
+    backdrop-filter:blur(16px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
     border-bottom:1px solid rgba(200, 155, 60, 0.2);
   }
-  header.scrolled .top-bar{display:none;}
-  header.scrolled .nav-body{padding:12px 0;}
+  header.scrolled .nav-body{padding:16px 0;}
 
-  .brand{display:flex; flex-direction:column; line-height:1.05; color:var(--white);}
-  .brand strong{font-family:'Fraunces', serif; font-size:22px; font-weight:500; letter-spacing:-0.02em;}
-  .brand span{font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--brass-soft); margin-top:4px;}
+  /* Marca ampliada */
+  .brand{display:flex; flex-direction:column; line-height:1.0; color:var(--white);}
+  .brand strong{
+    font-family:'Fraunces', serif; font-size:26px; font-weight:400;
+    letter-spacing:0.02em; text-transform:uppercase;
+  }
+  .brand span{
+    font-size:10px; letter-spacing:0.3em; text-transform:uppercase;
+    color:var(--brass-soft); margin-top:6px; font-weight:500;
+  }
 
-  .nav-links{display:flex; gap:38px; list-style:none; margin:0; padding:0;}
+  .nav-links{display:flex; gap:42px; list-style:none; margin:0; padding:0;}
   .nav-links a{
-    color:rgba(255,255,255,0.9); font-size:14px; font-weight:400; letter-spacing:0.03em;
+    color:rgba(255,255,255,0.85); font-size:14px; font-weight:400; letter-spacing:0.04em;
     position:relative; padding-bottom:6px; transition:color .25s ease;
   }
   .nav-links a:hover{color:var(--white);}
   .nav-links a::after{
-    content:""; position:absolute; left:50%; bottom:0; width:0; height:2px;
+    content:""; position:absolute; left:50%; bottom:0; width:0; height:1px;
     background:var(--brass); transition:all .3s ease; transform:translateX(-50%);
   }
   .nav-links a:hover::after{width:100%;}
   
   .btn{
     display:inline-flex; align-items:center; justify-content:center; gap:10px;
-    padding:13px 24px; border-radius:var(--radius); font-size:13.5px;
-    letter-spacing:0.04em; border:1px solid transparent; cursor:pointer; font-weight:500;
-    transition:all .25s cubic-bezier(0.16, 1, 0.3, 1);
+    padding:14px 28px; border-radius:var(--radius); font-size:13.5px;
+    letter-spacing:0.05em; border:1px solid transparent; cursor:pointer; font-weight:500;
+    transition:all .3s cubic-bezier(0.16, 1, 0.3, 1); text-transform:uppercase;
   }
-  .btn:hover{transform:translateY(-2px); box-shadow:0 6px 20px rgba(0,0,0,0.15);}
+  .btn:hover{transform:translateY(-2px); box-shadow:0 8px 25px rgba(0,0,0,0.2);}
   .btn-brass{background:var(--brass); color:var(--green-deep); font-weight:600;}
   .btn-brass:hover{background:var(--brass-soft);}
-  .btn-outline-dark{border-color:rgba(18,50,39,0.3); color:var(--green-deep);}
-  .btn-outline-dark:hover{border-color:var(--green-deep); background:rgba(18,50,39,0.06);}
-  .btn-sm{padding:9px 16px; font-size:12.5px;}
+  .btn-link{
+    padding:0; background:none; border:none; color:var(--brass);
+    font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.12em;
+    display:inline-flex; align-items:center; gap:6px; transition:gap .25s ease;
+  }
+  .btn-link:hover{gap:12px; color:var(--green-deep);}
 
-  .nav-cta{display:flex; align-items:center; gap:22px;}
   .burger{display:none; background:none; border:none; cursor:pointer; padding:8px; flex-direction:column; gap:5px; z-index:101;}
-  .burger span{display:block; width:24px; height:2px; background:var(--white); transition:transform .3s ease, opacity .3s ease;}
+  .burger span{display:block; width:26px; height:2px; background:var(--white); transition:all .3s ease;}
 
-  /* HERO IMPACTANTE */
+  /* 🏛️ 1. HERO CAPA DE REVISTA (88vh) + 3. MARCA D'ÁGUA + 4. FOTOGRAFIA TRATADA */
   .hero{
-    position:relative; min-height:100vh; display:flex; align-items:flex-end;
-    color:var(--white); overflow:hidden;
+    position:relative; min-height:88vh; display:flex; align-items:flex-end;
+    color:var(--white); overflow:hidden; padding-bottom:60px;
   }
   .hero-media{
     position:absolute; inset:0;
-    background:var(--green-deep) url('cidade-1.jpg') center 60%/cover no-repeat;
-    transform:scale(1.02);
+    background:var(--green-deep) url('cidade-1.jpg') center 45%/cover no-repeat;
+    transform:scale(1.03); filter:contrast(1.05) brightness(0.92);
   }
+  /* Gradients de alta precisão */
   .hero-media::after{
     content:""; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(18,50,39,0.7) 0%, rgba(18,50,39,0.45) 40%, rgba(12,34,26,0.88) 80%, rgba(9,24,18,0.98) 100%);
+    background:
+      linear-gradient(180deg, rgba(11,35,27,0.75) 0%, rgba(11,35,27,0.25) 35%, rgba(11,35,27,0.85) 80%, rgba(11,35,27,1) 100%),
+      radial-gradient(circle at left center, rgba(11,35,27,0.6) 0%, transparent 70%);
   }
-  .hero-content{position:relative; z-index:2; padding:210px 0 70px; width:100%;}
+  
+  /* ✨ 3. MARCA D'ÁGUA GIGANTESCA */
+  .watermark{
+    position:absolute; top:20%; right:-2%;
+    font-family:'Fraunces', serif; font-size:clamp(80px, 16vw, 210px);
+    font-weight:300; line-height:0.85; color:rgba(255,255,255,0.035);
+    user-select:none; pointer-events:none; text-transform:uppercase;
+    letter-spacing:-0.03em; white-space:nowrap; z-index:1;
+  }
+
+  .hero-content{position:relative; z-index:2; padding-top:160px; width:100%;}
   .hero-content .eyebrow{color:var(--brass-soft);}
   .hero-content .eyebrow::before{background:var(--brass-soft);}
   
+  /* 🥇 5. TÍTULO MONUMENTAL AMPLIAÇÃO 25% */
   h1.hero-title{
-    color:var(--white); font-size:clamp(42px, 6vw, 72px); font-weight:400;
-    line-height:1.05; margin:22px 0; max-width:16ch;
-    text-shadow:0 4px 30px rgba(0,0,0,0.3);
+    color:var(--white); font-size:clamp(46px, 6.2vw, 84px); font-weight:300;
+    line-height:1.02; margin:24px 0 20px; max-width:17ch;
+    text-shadow:0 10px 40px rgba(0,0,0,0.4);
   }
   h1.hero-title em{
     font-style:italic; font-weight:400;
     color:transparent;
-    background:linear-gradient(135deg, #F6F1E4 0%, var(--brass-soft) 50%, var(--brass) 100%);
+    background:linear-gradient(135deg, #FFF 0%, var(--brass-soft) 50%, var(--brass) 100%);
     -webkit-background-clip:text;
     background-clip:text;
   }
-  .hero-sub{max-width:540px; font-size:17px; color:rgba(255,255,255,0.88); margin-bottom:40px; font-weight:300;}
+  .hero-sub{max-width:580px; font-size:17px; color:rgba(255,255,255,0.85); margin-bottom:44px; font-weight:300; line-height:1.7;}
   
-  /* INTENÇÃO DE BUSCA COM ÍCONES VETORIAIS */
-  .intent-box{
-    background:rgba(18, 50, 39, 0.45); backdrop-filter:blur(16px);
-    border:1px solid rgba(200, 155, 60, 0.3); border-radius:var(--radius);
-    padding:24px 28px; max-width:760px; box-shadow:0 20px 40px rgba(0,0,0,0.3);
+  /* 🔥 6. BARRA CONCIERGE DE LUXO */
+  .concierge-bar{
+    background:rgba(11, 35, 27, 0.55); backdrop-filter:blur(20px);
+    border:1px solid rgba(200, 155, 60, 0.35); border-radius:var(--radius);
+    padding:20px 24px; max-width:980px; box-shadow:0 25px 50px rgba(0,0,0,0.4);
   }
-  .intent-box span{
-    display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em;
-    color:var(--brass-soft); margin-bottom:16px; font-weight:600;
+  .concierge-label{
+    display:block; font-size:10.5px; text-transform:uppercase; letter-spacing:0.25em;
+    color:var(--brass-soft); margin-bottom:14px; font-weight:600;
   }
-  .intent-buttons{display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px;}
+  .concierge-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px;}
   
-  .intent-btn{
-    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.18);
-    color:var(--white); padding:12px 16px; border-radius:var(--radius); font-size:13.5px;
-    display:inline-flex; align-items:center; justify-content:center; gap:10px;
-    cursor:pointer; transition:all .3s cubic-bezier(0.16, 1, 0.3, 1); text-decoration:none;
-    font-weight:400;
+  .concierge-item{
+    background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12);
+    padding:14px 16px; border-radius:var(--radius); cursor:pointer;
+    transition:all .35s cubic-bezier(0.16, 1, 0.3, 1); text-align:left;
+    display:flex; flex-direction:column; gap:4px; color:var(--white);
   }
-  .intent-btn svg{width:16px; height:16px; fill:var(--brass-soft); transition:transform .3s ease, fill .3s ease;}
+  .concierge-head{display:flex; align-items:center; gap:8px;}
+  .concierge-head svg{width:16px; height:16px; fill:var(--brass-soft); transition:transform .3s ease, fill .3s ease;}
+  .concierge-head strong{font-size:14px; font-weight:500; font-family:'Jost', sans-serif;}
+  .concierge-item small{font-size:11.5px; color:rgba(255,255,255,0.6); font-weight:300;}
   
-  .intent-btn:hover{
-    background:var(--brass); color:var(--green-deep); border-color:var(--brass); font-weight:600;
-    box-shadow:0 8px 20px rgba(200, 155, 60, 0.3); transform:translateY(-2px);
+  .concierge-item:hover{
+    background:var(--brass); border-color:var(--brass); transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(200, 155, 60, 0.25);
   }
-  .intent-btn:hover svg{fill:var(--green-deep); transform:scale(1.1);}
+  .concierge-item:hover .concierge-head strong,
+  .concierge-item:hover small{color:var(--green-deep);}
+  .concierge-item:hover .concierge-head svg{fill:var(--green-deep); transform:scale(1.1);}
 
-  /* POR QUE MARCOS */
-  .por-que{padding:100px 0; background:var(--cream);}
-  .por-que-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:30px; margin-top:48px;}
-  .por-que-card{
-    background:var(--white); padding:32px 26px; border-radius:var(--radius);
-    border-bottom:3px solid var(--brass); box-shadow:0 4px 20px rgba(0,0,0,0.03);
+  /* 💎 7. AUTORIDADE BASE HERO */
+  .hero-authority{
+    display:flex; gap:20px; align-items:center; font-size:11.5px;
+    letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.55);
+    margin-top:28px; font-weight:400;
   }
-  .icon-wrap{
-    width:46px; height:46px; border-radius:var(--radius); background:rgba(200,155,60,0.12);
-    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
-  }
-  .icon-wrap svg{width:22px; height:22px; fill:var(--brass);}
-  .por-que-card h3{font-size:19px; margin:0 0 10px;}
-  .por-que-card p{font-size:14px; color:#4a524c; margin:0;}
+  .hero-authority span.dot{width:4px; height:4px; background:var(--brass); border-radius:50%; display:inline-block;}
 
-  /* IMOVEIS */
-  .imoveis{background:var(--cream-2); padding:100px 0;}
+  /* 🧠 8. MARQUEE EDITORIAL DE TRANSIÇÃO DE PROFUNDIDADE */
+  .marquee-strip{
+    background:var(--green-deep); border-top:1px solid rgba(200,155,60,0.2);
+    border-bottom:1px solid rgba(200,155,60,0.2); padding:16px 0; color:var(--brass-soft);
+    font-size:11px; letter-spacing:0.3em; text-transform:uppercase; font-weight:500;
+    overflow:hidden; white-space:nowrap;
+  }
+  .marquee-content{display:inline-flex; gap:50px; animation:marquee 35s linear infinite;}
+  @keyframes marquee{ 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+
+  /* 🟡 10. DIFERENCIAIS EDITORIAIS (01, 02, 03, 04) */
+  .por-que{padding:120px 0; background:var(--cream);}
+  .editorial-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:40px; margin-top:60px;}
+  .editorial-item{
+    border-top:1px solid rgba(18,50,39,0.2); padding-top:24px;
+    display:flex; flex-direction:column;
+  }
+  .editorial-num{
+    font-family:'Fraunces', serif; font-size:38px; color:var(--brass);
+    font-weight:300; line-height:1; margin-bottom:16px;
+  }
+  .editorial-item h3{font-size:20px; font-weight:400; margin-bottom:12px; letter-spacing:-0.01em;}
+  .editorial-item p{font-size:14.5px; color:#4a524c; margin:0; line-height:1.7; font-weight:300;}
+
+  /* 🏡 11. IMOVEIS */
+  .imoveis{background:var(--cream-2); padding:120px 0;}
   .imoveis-head{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap;}
-  .imoveis-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:32px; margin-top:48px;}
+  .imoveis-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:36px; margin-top:54px;}
   .card{
     background:var(--white); border-radius:var(--radius); overflow:hidden;
-    box-shadow:0 6px 24px rgba(0,0,0,0.06); transition:transform .3s ease;
+    box-shadow:0 10px 30px rgba(0,0,0,0.04); transition:transform .35s ease, box-shadow .35s ease;
   }
-  .card:hover{transform:translateY(-6px);}
-  .card-media{position:relative; height:240px; background:#e2dad0; overflow:hidden;}
-  .card-media img{width:100%; height:100%; object-fit:cover;}
+  .card:hover{transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.08);}
+  .card-media{position:relative; height:270px; background:#e2dad0; overflow:hidden;}
+  .card-media img{width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .card:hover .card-media img{transform:scale(1.05);}
   .card-tag{
-    position:absolute; top:14px; left:14px; background:var(--green-deep);
-    color:var(--brass-soft); font-size:10px; letter-spacing:0.12em;
-    text-transform:uppercase; padding:6px 12px; border-radius:var(--radius); font-weight:600;
+    position:absolute; top:16px; left:16px; background:var(--green-deep);
+    color:var(--brass-soft); font-size:10px; letter-spacing:0.18em;
+    text-transform:uppercase; padding:6px 14px; border-radius:var(--radius); font-weight:600;
   }
-  .card-body{padding:24px;}
-  .card-loc{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass); font-weight:600;}
-  .card-body h3{font-size:20px; margin:6px 0 10px;}
+  .card-body{padding:28px;}
+  .card-loc{font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--brass); font-weight:600;}
+  .card-body h3{font-size:22px; margin:6px 0 12px; font-weight:400;}
   .card-meta{
-    display:flex; gap:12px; font-size:12.5px; color:#525a54;
-    padding:12px 0; border-top:1px solid #ECE5D3; border-bottom:1px solid #ECE5D3;
-    margin:14px 0 18px;
+    display:flex; gap:14px; font-size:13px; color:#525a54;
+    padding:14px 0; border-top:1px solid #ECE5D3; border-bottom:1px solid #ECE5D3;
+    margin:16px 0 20px; font-weight:300;
   }
   .card-footer{display:flex; align-items:center; justify-content:space-between;}
-  .card-price{font-family:'Fraunces', serif; font-size:22px; color:var(--green-deep); font-weight:600;}
+  .card-price{font-family:'Fraunces', serif; font-size:24px; color:var(--green-deep); font-weight:500;}
 
-  /* PROVA SOCIAL */
-  .prova-social{background:var(--white); padding:90px 0;}
-  .prova-header{text-align:center; max-width:620px; margin:0 auto 50px;}
-  .stars{color:var(--brass); font-size:20px; margin-bottom:10px;}
-  .depoimentos-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:30px;}
-  .depoimento-card{
-    background:var(--cream); padding:30px; border-radius:var(--radius);
-    font-size:14.5px; color:#36413a; position:relative; line-height:1.7;
+  /* ⭐ 12. PROVA SOCIAL ROBUSTA */
+  .prova-social{background:var(--white); padding:110px 0;}
+  .prova-layout{display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:center;}
+  .score-box{
+    background:var(--cream); padding:40px; border-radius:var(--radius);
+    border-left:4px solid var(--brass); text-align:left;
   }
-  .depoimento-autor{margin-top:18px; font-weight:600; font-size:13px; color:var(--green-deep); display:block;}
+  .score-val{font-family:'Fraunces', serif; font-size:56px; color:var(--green-deep); line-height:1; font-weight:400;}
+  .stars{color:var(--brass); font-size:22px; margin:10px 0;}
+  .score-sub{font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:#505852; font-weight:600;}
+  .depoimentos-grid{display:grid; gap:24px;}
+  .depoimento-card{
+    background:var(--cream); padding:32px; border-radius:var(--radius);
+    font-size:15px; color:#36413a; line-height:1.7; font-style:italic; font-family:'Fraunces', serif;
+  }
+  .depoimento-autor{
+    margin-top:16px; font-weight:600; font-size:12px; color:var(--green-deep);
+    display:block; font-family:'Jost', sans-serif; font-style:normal;
+    letter-spacing:0.1em; text-transform:uppercase;
+  }
 
-  /* SOBRE COM FOTO PNG SEM FUNDO */
-  .sobre{background:var(--green-deep); color:var(--cream); padding:100px 0; position:relative;}
-  .sobre-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:flex-end;}
+  /* 🧑🏽 13. SOBRE O MARCOS */
+  .sobre{background:var(--green-deep); color:var(--cream); padding:120px 0; position:relative;}
+  .sobre-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:70px; align-items:flex-end;}
   
   .sobre-photo-wrap{
     position:relative;
     background:radial-gradient(circle at bottom center, rgba(200,155,60,0.3) 0%, rgba(200,155,60,0.05) 60%, transparent 80%);
     border-bottom:3px solid var(--brass);
     border-radius:var(--radius);
-    padding-top:30px;
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
+    padding-top:20px; display:flex; justify-content:center; align-items:flex-end;
   }
   
   .sobre-photo-wrap img{
-    width:100%;
-    max-width:380px;
-    height:auto;
-    object-fit:contain;
-    filter:drop-shadow(0px 15px 25px rgba(0,0,0,0.45));
+    width:100%; max-width:420px; height:auto; object-fit:contain;
+    filter:drop-shadow(0px 20px 30px rgba(0,0,0,0.5));
   }
 
   .sobre-text .eyebrow{color:var(--brass-soft);}
   .sobre-text .eyebrow::before{background:var(--brass-soft);}
-  .sobre-text h2{color:var(--cream); font-size:clamp(28px,3.5vw,42px); margin:16px 0 20px;}
+  .sobre-text h2{color:var(--cream); font-size:clamp(30px, 3.8vw, 46px); margin:18px 0 22px; font-weight:300;}
   .creci-tag{
-    display:inline-block; background:rgba(200,155,60,0.2); border:1px solid var(--brass);
-    color:var(--brass-soft); font-size:11px; padding:5px 12px; border-radius:var(--radius);
-    margin-bottom:18px; letter-spacing:0.12em; font-weight:500;
+    display:inline-block; background:rgba(200,155,60,0.18); border:1px solid var(--brass);
+    color:var(--brass-soft); font-size:11px; padding:6px 14px; border-radius:var(--radius);
+    margin-bottom:20px; letter-spacing:0.15em; font-weight:500; text-transform:uppercase;
   }
+  .sobre-signature{
+    margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.15);
+    font-family:'Fraunces', serif; font-size:18px; color:var(--brass-soft);
+  }
+  .sobre-signature span{display:block; font-family:'Jost', sans-serif; font-size:11px; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.15em; margin-top:2px;}
 
-  /* CIDADE */
-  .cidade{padding:100px 0; background:var(--cream);}
-  .bairros-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px; margin-top:40px;}
+  /* 🗺️ 14. BAIRROS EDITORIAL */
+  .cidade{padding:120px 0; background:var(--cream);}
+  .bairros-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:32px; margin-top:50px;}
   .bairro-card{
-    background:var(--white); padding:24px; border-radius:var(--radius);
-    border-left:4px solid var(--green-deep); box-shadow:0 4px 15px rgba(0,0,0,0.02);
+    background:var(--white); padding:32px; border-radius:var(--radius);
+    border-top:3px solid var(--green-deep); box-shadow:0 6px 20px rgba(0,0,0,0.02);
   }
-  .bairro-card h3{font-size:17px; margin-bottom:8px;}
-  .bairro-card p{font-size:13.5px; color:#505852; margin:0;}
+  .bairro-num{font-family:'Fraunces', serif; font-size:24px; color:var(--brass); margin-bottom:10px;}
+  .bairro-card h3{font-size:19px; margin-bottom:10px; font-weight:400;}
+  .bairro-card p{font-size:14px; color:#505852; margin:0; font-weight:300; line-height:1.6;}
 
   /* CTA FINAL & FOOTER */
-  .cta-final{background:var(--cream-2); padding:90px 0; text-align:center;}
-  footer{background:var(--green-deep); color:rgba(246,241,228,0.8); padding:70px 0 35px; font-size:13.5px;}
-  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:40px;}
+  .cta-final{background:var(--cream-2); padding:100px 0; text-align:center;}
+  footer{background:var(--green-deep); color:rgba(246,241,228,0.75); padding:80px 0 40px; font-size:13.5px;}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:50px; margin-bottom:50px;}
 
   /* WA FLOAT */
   .wa-float{
-    position:fixed; right:24px; bottom:24px; z-index:200; width:58px; height:58px;
+    position:fixed; right:28px; bottom:28px; z-index:200; width:60px; height:60px;
     border-radius:50%; background:#25D366; display:flex; align-items:center;
-    justify-content:center; box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    transition:transform .25s ease;
+    justify-content:center; box-shadow:0 12px 30px rgba(0,0,0,0.3);
+    transition:transform .3s ease;
   }
-  .wa-float:hover{transform:scale(1.08);}
+  .wa-float:hover{transform:scale(1.1);}
 
-  @media(max-width: 850px){
-    .top-bar{display:none;}
+  @media(max-width: 900px){
     .burger{display:flex;}
     .nav-links{
-      position:fixed; top:0; right:-100%; width:80%; height:100vh;
-      background:var(--green-deep); flex-direction:column; padding:100px 32px;
-      gap:24px; transition:right .35s ease;
+      position:fixed; top:0; right:-100%; width:85%; height:100vh;
+      background:var(--green-deep); flex-direction:column; padding:120px 36px;
+      gap:28px; transition:right .4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .nav-links.active{right:0;}
-    .sobre-grid{grid-template-columns:1fr;}
+    .hero{min-height:auto; padding-bottom:80px;}
+    .prova-layout, .sobre-grid{grid-template-columns:1fr;}
     .foot-grid{grid-template-columns:1fr;}
+    .watermark{display:none;}
   }
 </style>
 </head>
 <body>
 
+<!-- 🟢 2. HEADER INICIALMENTE TRANSPARENTE -->
 <header id="siteHeader">
-  <div class="top-bar">
-    <div class="wrap">
-      <span>📍 São Lourenço — Sul de Minas Gerais</span>
-      <span>CRECI-MG Credenciado • Atendimento Exclusivo</span>
-    </div>
-  </div>
   <div class="nav-body">
     <div class="wrap nav">
       <a href="#" class="brand">
@@ -321,7 +363,7 @@
           <li><a href="#cidade">A Cidade</a></li>
         </ul>
       </nav>
-      <div class="nav-cta">
+      <div style="display:flex; align-items:center; gap:20px;">
         <a class="btn btn-brass" href="https://wa.me/5535988163157?text=Olá,%20Marcos!%20Gostaria%20de%20atendimento." target="_blank" rel="noopener">WhatsApp</a>
         <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -332,70 +374,94 @@
 </header>
 
 <main>
-  <!-- HERO IMPACTANTE -->
+  <!-- 🏛️ 1. HERO CAPA DE REVISTA COM MARCA D'ÁGUA E CONCIERGE -->
   <section class="hero">
     <div class="hero-media"></div>
+    <div class="watermark">SÃO LOURENÇO</div>
+    
     <div class="wrap hero-content">
       <span class="eyebrow">Atendimento Boutique</span>
-      <h1 class="hero-title">Seu próximo endereço<br>tem vista para <em>a serra</em>.</h1>
+      <h1 class="hero-title">Seu próximo endereço<br>tem vista para <em>a serra.</em></h1>
       <p class="hero-sub">Curadoria imobiliária sob medida para quem busca morar ou investir em São Lourenço com total transparência e segurança jurídica.</p>
       
-      <!-- Entrada inteligente de intenção com ícones SVG -->
-      <div class="intent-box">
-        <span>O que você procura hoje?</span>
-        <div class="intent-buttons">
-          <a href="#imoveis" class="intent-btn">
-            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-            Comprar
-          </a>
-          <button class="intent-btn" onclick="openWA('Procuro um imóvel para alugar em São Lourenço')">
-            <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v2h2v-2h2v-2h-8.35zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-            Alugar
-          </button>
-          <button class="intent-btn" onclick="openWA('Quero colocar meu imóvel à venda')">
-            <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
-            Vender
-          </button>
-          <button class="intent-btn" onclick="openWA('Gostaria de uma avaliação do meu imóvel')">
-            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-            Avaliar
-          </button>
+      <!-- 🔥 6. BARRA CONCIERGE DE LUXO -->
+      <div class="concierge-bar">
+        <span class="concierge-label">O que você procura hoje?</span>
+        <div class="concierge-grid">
+          <div class="concierge-item" onclick="location.href='#imoveis'">
+            <div class="concierge-head">
+              <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              <strong>Comprar</strong>
+            </div>
+            <small>Encontrar um imóvel</small>
+          </div>
+          <div class="concierge-item" onclick="openWA('Procuro um imóvel para alugar em São Lourenço')">
+            <div class="concierge-head">
+              <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v2h2v-2h2v-2h-8.35zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+              <strong>Alugar</strong>
+            </div>
+            <small>Morar em São Lourenço</small>
+          </div>
+          <div class="concierge-item" onclick="openWA('Quero colocar meu imóvel à venda')">
+            <div class="concierge-head">
+              <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+              <strong>Vender</strong>
+            </div>
+            <small>Anunciar meu imóvel</small>
+          </div>
+          <div class="concierge-item" onclick="openWA('Gostaria de uma avaliação do meu imóvel')">
+            <div class="concierge-head">
+              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+              <strong>Avaliar</strong>
+            </div>
+            <small>Descobrir o valor real</small>
+          </div>
         </div>
+      </div>
+
+      <!-- 💎 7. AUTORIDADE BASE HERO -->
+      <div class="hero-authority">
+        <span>CRECI-MG Credenciado</span>
+        <span class="dot"></span>
+        <span>São Lourenço — MG</span>
+        <span class="dot"></span>
+        <span>Compra • Venda • Locação</span>
       </div>
     </div>
   </section>
 
-  <!-- POR QUE MARCOS -->
+  <!-- 🧠 8. MARQUEE EDITORIAL -->
+  <div class="marquee-strip">
+    <div class="marquee-content">
+      <span>Curadoria Exclusiva</span> • <span>São Lourenço — Sul de Minas</span> • <span>Segurança Documental</span> • <span>Atendimento Personalizado</span> • <span>Imóveis de Alto Padrão</span> •
+      <span>Curadoria Exclusiva</span> • <span>São Lourenço — Sul de Minas</span> • <span>Segurança Documental</span> • <span>Atendimento Personalizado</span> • <span>Imóveis de Alto Padrão</span> •
+    </div>
+  </div>
+
+  <!-- 🟡 10. DIFERENCIAIS EDITORIAIS -->
   <section class="por-que" id="diferenciais">
     <div class="wrap">
-      <span class="eyebrow">Por que contar com o Marcos</span>
+      <span class="eyebrow">Atuação Diferenciada</span>
       <h2>A segurança de quem entende o mercado local.</h2>
-      <div class="por-que-grid">
-        <div class="por-que-card">
-          <div class="icon-wrap">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          </div>
+      
+      <div class="editorial-grid">
+        <div class="editorial-item">
+          <span class="editorial-num">01</span>
           <h3>Conhecimento Local</h3>
           <p>Entendimento real de cada bairro, infraestrutura e potencial de valorização em São Lourenço.</p>
         </div>
-        <div class="por-que-card">
-          <div class="icon-wrap">
-            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-          </div>
+        <div class="editorial-item">
+          <span class="editorial-num">02</span>
           <h3>Acompanhamento Direto</h3>
           <p>Comunicação clara e sem intermediários da primeira visita até a entrega das chaves.</p>
         </div>
-        <div class="por-que-card">
-          <div class="icon-wrap">
-            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-          </div>
+        <div class="editorial-item">
+          <span class="editorial-num">03</span>
           <h3>Segurança Documental</h3>
           <p>Análise detalhada de certidões e contratos para garantir uma transação imobiliária sem riscos.</p>
         </div>
-        <div class="por-que-card">
-          <div class="icon-wrap">
-            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-          </div>
+        <div class="editorial-item">
+          <span class="editorial-num">04</span>
           <h3>Curadoria Eficiente</h3>
           <p>Seleção alinhada exatamente ao seu perfil para otimizar seu tempo de busca.</p>
         </div>
@@ -403,7 +469,7 @@
     </div>
   </section>
 
-  <!-- IMOVEIS -->
+  <!-- 🏡 11. IMOVEIS COM LOCALIZAÇÃO E CTA ELEGANTE -->
   <section class="imoveis" id="imoveis">
     <div class="wrap">
       <div class="imoveis-head">
@@ -411,7 +477,7 @@
           <span class="eyebrow">Oportunidades em Destaque</span>
           <h2>Imóveis Selecionados</h2>
         </div>
-        <a href="https://wa.me/5535988163157?text=Quero%20receber%20o%20catálogo%20completo" target="_blank" class="btn btn-outline-dark">Ver catálogo completo</a>
+        <a href="https://wa.me/5535988163157?text=Quero%20receber%20o%20catálogo%20completo" target="_blank" class="btn-link">Ver catálogo completo →</a>
       </div>
 
       <div class="imoveis-grid">
@@ -421,14 +487,14 @@
             <img src="imovel-1.jpg" alt="Casa em Condomínio - Reserva da Serra">
           </div>
           <div class="card-body">
-            <div class="card-loc">Reserva da Serra</div>
+            <div class="card-loc">Reserva da Serra · São Lourenço/MG</div>
             <h3>Casa Térrea Integrada</h3>
             <div class="card-meta">
               <span>420 m²</span> • <span>4 Quartos</span> • <span>2 Suítes</span>
             </div>
             <div class="card-footer">
               <div class="card-price">R$ 1.850.000</div>
-              <button onclick="openWA('Tenho interesse na Casa no Reserva da Serra (R$ 1.850.000)')" class="btn btn-brass btn-sm">Tenho interesse</button>
+              <button onclick="openWA('Tenho interesse na Casa no Reserva da Serra (R$ 1.850.000)')" class="btn-link">Tenho interesse →</button>
             </div>
           </div>
         </article>
@@ -439,14 +505,14 @@
             <img src="imovel-2.jpg" alt="Casa no Bairro Federal">
           </div>
           <div class="card-body">
-            <div class="card-loc">Federal</div>
+            <div class="card-loc">Federal · São Lourenço/MG</div>
             <h3>Casa com Quintal Ampliado</h3>
             <div class="card-meta">
               <span>120 m²</span> • <span>2 Quartos</span> • <span>1 Garagem</span>
             </div>
             <div class="card-footer">
               <div class="card-price">R$ 320.000</div>
-              <button onclick="openWA('Tenho interesse na Casa no Bairro Federal (R$ 320.000)')" class="btn btn-brass btn-sm">Tenho interesse</button>
+              <button onclick="openWA('Tenho interesse na Casa no Bairro Federal (R$ 320.000)')" class="btn-link">Tenho interesse →</button>
             </div>
           </div>
         </article>
@@ -457,14 +523,14 @@
             <img src="imovel-3.jpg" alt="Sobrado na Vila Nova">
           </div>
           <div class="card-body">
-            <div class="card-loc">Vila Nova</div>
+            <div class="card-loc">Vila Nova · São Lourenço/MG</div>
             <h3>Sobrado Moderno com Varanda</h3>
             <div class="card-meta">
               <span>180 m²</span> • <span>3 Quartos</span> • <span>1 Suíte</span>
             </div>
             <div class="card-footer">
               <div class="card-price">R$ 590.000</div>
-              <button onclick="openWA('Tenho interesse no Sobrado na Vila Nova (R$ 590.000)')" class="btn btn-brass btn-sm">Tenho interesse</button>
+              <button onclick="openWA('Tenho interesse no Sobrado na Vila Nova (R$ 590.000)')" class="btn-link">Tenho interesse →</button>
             </div>
           </div>
         </article>
@@ -472,61 +538,70 @@
     </div>
   </section>
 
-  <!-- PROVA SOCIAL -->
+  <!-- ⭐ 12. PROVA SOCIAL COM SCORE -->
   <section class="prova-social" id="avaliacoes">
     <div class="wrap">
-      <div class="prova-header">
-        <div class="stars">★★★★★</div>
-        <h2>Reconhecimento de quem já confiou no trabalho</h2>
-        <p>A satisfação dos clientes é o principal indicador de uma negociação conduzida com ética e proximidade.</p>
-      </div>
-      <div class="depoimentos-grid">
-        <div class="depoimento-card">
-          "O Marcos conduziu toda a negociação da nossa casa em São Lourenço com uma clareza incrível. Transmite muita confiança e cuidou de cada detalhe da papelada."
-          <span class="depoimento-autor">— Ricardo & Família</span>
+      <div class="prova-layout">
+        <div class="score-box">
+          <div class="score-val">4.9 / 5</div>
+          <div class="stars">★★★★★</div>
+          <div class="score-sub">Avaliação Média • Clientes Atendidos em São Lourenço</div>
         </div>
-        <div class="depoimento-card">
-          "Atendimento excelente e sem enrolação. Ele entendeu exatamente o perfil de imóvel que precisávamos e otimizou demais nosso tempo de visita."
-          <span class="depoimento-autor">— Camila S.</span>
+        <div class="depoimentos-grid">
+          <div class="depoimento-card">
+            "O Marcos conduziu toda a negociação da nossa casa em São Lourenço com uma clareza incrível. Transmite muita confiança e cuidou de cada detalhe da papelada."
+            <span class="depoimento-autor">— Ricardo & Família</span>
+          </div>
+          <div class="depoimento-card">
+            "Atendimento excelente e sem enrolação. Ele entendeu exatamente o perfil de imóvel que precisávamos e otimizou demais nosso tempo de visita."
+            <span class="depoimento-autor">— Camila S.</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE -->
+  <!-- 🧑🏽 13. SOBRE O MARCOS COM ASSINATURA EDITORIAL -->
   <section class="sobre" id="sobre">
     <div class="wrap sobre-grid">
       <div class="sobre-photo-wrap">
         <img src="corretor.png" alt="Marcos Vinícius Corretor de Imóveis">
       </div>
-      <div class="sobre-text" style="padding-bottom:20px;">
+      <div class="sobre-text" style="padding-bottom:10px;">
         <span class="eyebrow">Sobre o Corretor</span>
-        <h2>Experiência digital ágil com o cuidado e a proximidade do Sul de Minas.</h2>
+        <h2>Experiência digital ágil com o cuidado do Sul de Minas.</h2>
         <span class="creci-tag">CRECI-MG • Registro Ativo</span>
         <p>Em São Lourenço, Marcos Vinícius atua na intermediação de compra, venda e locação de imóveis, unindo atendimento dedicado, forte conhecimento regional e processos descomplicados.</p>
         <p>Seu objetivo é proporcionar negociações tranquilas e transparentes, auxiliando famílias e investidores a tomarem as melhores decisões no mercado imobiliário local.</p>
-        <a class="btn btn-brass" style="margin-top:15px;" href="https://wa.me/5535988163157?text=Olá%20Marcos,%20gostaria%20de%20conversar" target="_blank">Falar com o Marcos</a>
+        
+        <div class="sobre-signature">
+          Marcos Vinícius
+          <span>Corretor de Imóveis · São Lourenço/MG</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CIDADE E BAIRROS -->
+  <!-- 🗺️ 14. BAIRROS EDITORIAL -->
   <section class="cidade" id="cidade">
     <div class="wrap">
       <span class="eyebrow">Guia Rápido</span>
       <h2>Conheça as regiões de São Lourenço</h2>
       <div class="bairros-grid">
         <div class="bairro-card">
+          <div class="bairro-num">01</div>
           <h3>Centro</h3>
-          <p>Praticidade, proximidade do Parque das Águas e facilidade de acesso ao comércio local.</p>
+          <p>A cidade ao alcance dos pés: praticidade, proximidade do Parque das Águas e acesso imediato ao comércio local.</p>
         </div>
         <div class="bairro-card">
+          <div class="bairro-num">02</div>
           <h3>Bairros Residenciais</h3>
-          <p>Ruas arborizadas, tranquilidade e excelente ambiente para moradia familiar.</p>
+          <p>Tranquilidade para sua rotina: ruas arborizadas, perfil familiar e excelente qualidade de vida.</p>
         </div>
         <div class="bairro-card">
+          <div class="bairro-num">03</div>
           <h3>Região Serrana & Condomínios</h3>
-          <p>Privacidade, contato constante com a natureza e vistas privilegiadas da serra.</p>
+          <p>Natureza e privacidade: refúgio com vistas privilegiadas da serra e infraestrutura de segurança.</p>
         </div>
       </div>
     </div>
@@ -537,7 +612,7 @@
     <div class="wrap">
       <span class="eyebrow">Atendimento Direto</span>
       <h2>Pronto para dar o próximo passo?</h2>
-      <p>Envie uma mensagem e receba um atendimento personalizado para o seu objetivo imobiliário.</p>
+      <p style="max-width:500px; margin:12px auto 30px; color:#505852;">Envie uma mensagem e receba um atendimento personalizado para o seu objetivo imobiliário.</p>
       <a class="btn btn-brass" href="https://wa.me/5535988163157?text=Olá,%20quero%20encontrar%20meu%20imóvel" target="_blank">Iniciar conversa no WhatsApp</a>
     </div>
   </section>
@@ -559,7 +634,7 @@
         <p>WhatsApp: (35) 98816-3157<br>São Lourenço — Minas Gerais<br>CRECI-MG Credenciado</p>
       </div>
     </div>
-    <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; text-align:center; font-size:11.5px; opacity:0.6;">
+    <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:24px; text-align:center; font-size:11.5px; opacity:0.65;">
       © 2026 Marcos Vinícius Corretor de Imóveis. Todos os direitos reservados.
     </div>
   </div>
@@ -575,7 +650,7 @@
   const navLinks = document.getElementById('navLinks');
 
   window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 30);
+    header.classList.toggle('scrolled', window.scrollY > 40);
   });
 
   burgerBtn.addEventListener('click', () => {
