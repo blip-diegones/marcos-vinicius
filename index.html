@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Marcos Vinícius — Imóveis em São Lourenço, MG</title>
-<meta name="description" content="Marcos Vinícius Corretor de Imóveis (CRECI-MG). Curadoria e intermediação imobiliária de alto padrão em São Lourenço, MG." />
+<title>Matheus Dias — Imóveis em São Lourenço, MG</title>
+<meta name="description" content="Matheus Dias Corretor de Imóveis (CRECI-MG). Curadoria e intermediação imobiliária de alto padrão em São Lourenço, MG." />
 
 <link rel="preload" as="image" href="cidade-1.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,34 +141,80 @@
   }
   .hero-sub{max-width:580px; font-size:16px; color:rgba(255,255,255,0.85); margin-bottom:32px; font-weight:300; line-height:1.6;}
   
-  /* CONCIERGE DESKTOP */
-  .concierge-bar{
-    background:rgba(11, 35, 27, 0.6); backdrop-filter:blur(20px);
-    border:1px solid rgba(200, 155, 60, 0.35); border-radius:var(--radius);
-    padding:20px 24px; max-width:980px; box-shadow:0 25px 50px rgba(0,0,0,0.4);
+  /* WIDGET DE BUSCA */
+  .search-widget{
+    background:rgba(11, 35, 27, 0.62); backdrop-filter:blur(24px);
+    border:1px solid rgba(200, 155, 60, 0.35); border-radius:10px;
+    max-width:1020px; box-shadow:0 30px 60px rgba(0,0,0,0.45);
+    overflow:hidden;
   }
-  .concierge-label{
-    display:block; font-size:10.5px; text-transform:uppercase; letter-spacing:0.25em;
-    color:var(--brass-soft); margin-bottom:14px; font-weight:600;
+
+  .sw-tabs{display:flex; border-bottom:1px solid rgba(255,255,255,0.14);}
+  .sw-tab{
+    position:relative; flex:1; text-align:center; padding:17px 12px;
+    font-size:12.5px; letter-spacing:0.12em; text-transform:uppercase; font-weight:500;
+    color:rgba(255,255,255,0.55); background:none; border:none; cursor:pointer;
+    font-family:'Jost', sans-serif; transition:color .25s ease;
   }
-  .concierge-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px;}
-  
-  .concierge-item{
-    background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12);
-    padding:12px 14px; border-radius:var(--radius); cursor:pointer;
-    transition:all .3s ease; display:flex; flex-direction:column; gap:2px; color:var(--white);
+  .sw-tab::after{
+    content:""; position:absolute; left:0; bottom:-1px; width:100%; height:2px;
+    background:var(--brass); transform:scaleX(0); transition:transform .3s ease;
   }
-  .concierge-head{display:flex; align-items:center; gap:8px;}
-  .concierge-head svg{width:15px; height:15px; fill:var(--brass-soft);}
-  .concierge-head strong{font-size:13.5px; font-weight:500;}
-  .concierge-item small{font-size:11px; color:rgba(255,255,255,0.6); font-weight:300;}
-  
-  .concierge-item:hover{
-    background:var(--brass); border-color:var(--brass); transform:translateY(-2px);
+  .sw-tab.active{color:var(--white);}
+  .sw-tab.active::after{transform:scaleX(1);}
+  .sw-tab:hover{color:rgba(255,255,255,0.85);}
+
+  .sw-body{padding:24px 26px 22px;}
+
+  .sw-fields{
+    display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:14px; align-items:end;
   }
-  .concierge-item:hover .concierge-head strong,
-  .concierge-item:hover small{color:var(--green-deep);}
-  .concierge-item:hover .concierge-head svg{fill:var(--green-deep);}
+  .sw-field{display:flex; flex-direction:column; gap:7px;}
+  .sw-field label{
+    font-size:10px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--brass-soft); font-weight:600;
+  }
+  .sw-field select, .sw-field input[type="text"]{
+    width:100%; appearance:none; -webkit-appearance:none;
+    background:var(--white) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" fill="none" stroke="%23123227" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat right 14px center;
+    border:1px solid transparent; border-radius:var(--radius);
+    padding:13px 34px 13px 14px; font-family:'Jost', sans-serif; font-size:13.5px;
+    color:var(--ink); cursor:pointer; transition:box-shadow .25s ease;
+  }
+  .sw-field input[type="text"]{background-image:none; padding:13px 14px; cursor:text;}
+  .sw-field select:focus, .sw-field input:focus{
+    outline:none; box-shadow:0 0 0 2px var(--brass);
+  }
+  .sw-submit{
+    padding:13px 30px; white-space:nowrap; height:47px;
+  }
+
+  .sw-advanced-toggle{
+    display:inline-flex; align-items:center; gap:6px; margin-top:16px;
+    background:none; border:none; cursor:pointer; padding:0;
+    color:var(--brass-soft); font-family:'Jost', sans-serif;
+    font-size:12px; letter-spacing:0.1em; text-transform:uppercase; font-weight:600;
+  }
+  .sw-advanced-toggle svg{width:11px; height:11px; fill:var(--brass-soft); transition:transform .3s ease;}
+  .sw-advanced-toggle.open svg{transform:rotate(45deg);}
+
+  .sw-advanced{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:14px;
+    max-height:0; opacity:0; overflow:hidden;
+    transition:max-height .4s ease, opacity .3s ease, margin-top .4s ease;
+  }
+  .sw-advanced.open{
+    max-height:260px; opacity:1; margin-top:18px;
+    padding-top:18px; border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .sw-toggle-chip{
+    display:flex; align-items:center; gap:9px; cursor:pointer;
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.16);
+    border-radius:var(--radius); padding:12.5px 14px; color:rgba(255,255,255,0.85);
+    font-size:13px; user-select:none; transition:all .25s ease; align-self:end;
+  }
+  .sw-toggle-chip input{accent-color:var(--brass); width:15px; height:15px;}
+  .sw-toggle-chip.checked{background:rgba(200,155,60,0.18); border-color:var(--brass);}
 
   .hero-authority{
     display:flex; gap:16px; align-items:center; font-size:11px;
@@ -243,12 +289,20 @@
 
   /* SOBRE */
   .sobre{background:var(--green-deep); color:var(--cream); padding:100px 0;}
-  .sobre-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:flex-end;}
+  .sobre-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:center;}
   .sobre-photo-wrap{
-    background:radial-gradient(circle at bottom center, rgba(200,155,60,0.3) 0%, transparent 80%);
-    border-bottom:3px solid var(--brass); display:flex; justify-content:center;
+    background:radial-gradient(circle at bottom center, rgba(200,155,60,0.22) 0%, transparent 75%);
+    display:flex; justify-content:center;
   }
-  .sobre-photo-wrap img{width:100%; max-width:380px; height:auto; object-fit:contain;}
+  .sobre-photo-frame{
+    width:100%; max-width:360px; padding:10px;
+    border:1px solid rgba(200,155,60,0.55);
+    position:relative;
+  }
+  .sobre-photo-frame::before{
+    content:""; position:absolute; inset:-9px; border:1px solid rgba(200,155,60,0.18); pointer-events:none;
+  }
+  .sobre-photo-wrap img{width:100%; height:auto; display:block; object-fit:cover; aspect-ratio:4/5;}
   .sobre-text h2{color:var(--cream); font-size:clamp(28px, 3.5vw, 42px); margin:14px 0 18px; font-weight:300;}
   .creci-tag{
     display:inline-block; background:rgba(200,155,60,0.18); border:1px solid var(--brass);
@@ -272,11 +326,24 @@
   footer{background:var(--green-deep); color:rgba(246,241,228,0.75); padding:60px 0 30px; font-size:13px;}
   .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:40px;}
 
-  .wa-float{
+  .ig-float{
     position:fixed; right:20px; bottom:20px; z-index:200; width:54px; height:54px;
-    border-radius:50%; background:#25D366; display:flex; align-items:center;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    display:flex; align-items:center;
     justify-content:center; box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transition:transform .25s ease;
   }
+  .ig-float:hover{transform:translateY(-3px);}
+
+  .ig-toast{
+    position:fixed; left:50%; bottom:88px; transform:translate(-50%, 12px);
+    background:var(--green-deep); color:var(--cream); border:1px solid rgba(200,155,60,0.4);
+    padding:12px 20px; border-radius:var(--radius); font-size:13px; font-family:'Jost', sans-serif;
+    box-shadow:0 12px 30px rgba(0,0,0,0.3); z-index:300; opacity:0; pointer-events:none;
+    transition:opacity .3s ease, transform .3s ease; max-width:80vw; text-align:center;
+  }
+  .ig-toast.show{opacity:1; transform:translate(-50%, 0);}
 
   /* 📱 OTIMIZAÇÕES EXCLUSIVAS PARA CELULAR (MAX-WIDTH: 768PX) */
   @media(max-width: 768px){
@@ -303,12 +370,15 @@
     .hero-sub{font-size:14.5px; margin-bottom:24px;}
     .watermark{display:none;}
 
-    /* Concierge compacto em 2x2 */
-    .concierge-bar{padding:16px;}
-    .concierge-grid{grid-template-columns:1fr 1fr; gap:8px;}
-    .concierge-item{padding:10px 12px;}
-    .concierge-head strong{font-size:12.5px;}
-    .concierge-item small{font-size:10px;}
+    /* Widget de busca empilhado no mobile */
+    .search-widget{border-radius:8px;}
+    .sw-tabs{overflow-x:auto;}
+    .sw-tab{padding:14px 10px; font-size:11px; letter-spacing:0.08em;}
+    .sw-body{padding:18px 16px 18px;}
+    .sw-fields{grid-template-columns:1fr;}
+    .sw-submit{width:100%;}
+    .sw-advanced{grid-template-columns:1fr 1fr;}
+    .sw-advanced.open{max-height:420px;}
 
     /* Autoridade limpa */
     .hero-authority{
@@ -348,7 +418,7 @@
 
     /* Sobre */
     .sobre-grid{grid-template-columns:1fr; gap:30px;}
-    .sobre-photo-wrap img{max-width:280px;}
+    .sobre-photo-frame{max-width:260px;}
 
     /* Bairros */
     .bairros-grid{grid-template-columns:1fr; gap:16px; margin-top:24px;}
@@ -365,7 +435,7 @@
   <div class="nav-body">
     <div class="wrap nav">
       <a href="#" class="brand">
-        <strong>Marcos Vinícius</strong>
+        <strong>Matheus Dias</strong>
         <span>Corretor de Imóveis</span>
       </a>
       <nav aria-label="Navegação principal">
@@ -378,7 +448,7 @@
         </ul>
       </nav>
       <div style="display:flex; align-items:center; gap:16px;">
-        <a class="btn btn-brass header-cta-desktop" href="https://wa.me/5535988163157?text=Olá,%20Marcos!%20Gostaria%20de%20atendimento." target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-brass header-cta-desktop" href="#" onclick="openInstagram('Olá, Matheus! Gostaria de atendimento.'); return false;" rel="noopener">Instagram</a>
         <button class="burger" id="burgerBtn" aria-label="Abrir menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -397,36 +467,117 @@
       <h1 class="hero-title">Seu próximo endereço<br>tem vista para <em>a serra.</em></h1>
       <p class="hero-sub">Curadoria imobiliária sob medida para quem busca morar ou investir em São Lourenço com total transparência e segurança jurídica.</p>
       
-      <div class="concierge-bar">
-        <span class="concierge-label">O que você procura hoje?</span>
-        <div class="concierge-grid">
-          <div class="concierge-item" onclick="location.href='#imoveis'">
-            <div class="concierge-head">
-              <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-              <strong>Comprar</strong>
+      <div class="search-widget">
+        <div class="sw-tabs" role="tablist" aria-label="Finalidade da busca">
+          <button class="sw-tab active" data-finalidade="Comprar" onclick="setFinalidade(this)">Comprar</button>
+          <button class="sw-tab" data-finalidade="Alugar" onclick="setFinalidade(this)">Locação Anual</button>
+          <button class="sw-tab" data-finalidade="Temporada" onclick="setFinalidade(this)">Temporada</button>
+        </div>
+
+        <div class="sw-body">
+          <div class="sw-fields">
+            <div class="sw-field">
+              <label for="swTipo">Tipo de imóvel</label>
+              <select id="swTipo">
+                <option value="">Todos os tipos</option>
+                <option>Casa</option>
+                <option>Apartamento</option>
+                <option>Terreno</option>
+                <option>Comercial</option>
+              </select>
             </div>
-            <small>Encontrar imóvel</small>
+
+            <div class="sw-field">
+              <label for="swBairro">Bairro</label>
+              <select id="swBairro">
+                <option value="">Todos os bairros</option>
+                <option>Centro</option>
+                <option value="Federal">Federal / Nossa Senhora de Fátima</option>
+                <option>Estação</option>
+                <option>Jardim Serrano</option>
+                <option>Santa Mônica</option>
+                <option>Solar dos Lagos</option>
+                <option>Porta do Céu</option>
+                <option>São Lourenço Velho</option>
+                <option>Vila Carneiro</option>
+                <option>Canaã</option>
+                <option>Jardim Paraíso</option>
+                <option>Jardim São Lourenço</option>
+                <option>Lagoa Seca</option>
+                <option>Serra Azul</option>
+                <option>Carioca / Residencial Carioca</option>
+                <option>Moradas da Serra</option>
+                <option>Madureira</option>
+                <option>Vila Nova</option>
+                <option>Parque Olímpico</option>
+                <option>Nossa Senhora de Lourdes (Cafundó)</option>
+                <option>João de Deus (Barreiro)</option>
+                <option>Sonda</option>
+                <option>Cohab</option>
+                <option>Zona Rural</option>
+              </select>
+            </div>
+
+            <div class="sw-field">
+              <label for="swFaixa">Faixa de preço</label>
+              <select id="swFaixa">
+                <option value="">Qualquer valor</option>
+                <option>Até R$ 300 mil</option>
+                <option>R$ 300 mil a R$ 500 mil</option>
+                <option>R$ 500 mil a R$ 800 mil</option>
+                <option>R$ 800 mil a R$ 1,2 milhão</option>
+                <option>Acima de R$ 1,2 milhão</option>
+              </select>
+            </div>
+
+            <button class="btn btn-brass sw-submit" onclick="buscarImoveis()">Buscar Imóveis</button>
           </div>
-          <div class="concierge-item" onclick="openWA('Procuro um imóvel para alugar em São Lourenço')">
-            <div class="concierge-head">
-              <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v2h2v-2h2v-2h-8.35zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-              <strong>Alugar</strong>
-            </div>
-            <small>Morar na cidade</small>
+
+          <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+            <button class="sw-advanced-toggle" id="swAdvToggle" onclick="toggleAdvanced()">
+              <svg viewBox="0 0 24 24"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></svg>
+              Filtros avançados
+            </button>
+            <button class="sw-advanced-toggle" style="color:rgba(255,255,255,0.45);" onclick="limparFiltros()">Limpar filtros</button>
           </div>
-          <div class="concierge-item" onclick="openWA('Quero colocar meu imóvel à venda')">
-            <div class="concierge-head">
-              <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
-              <strong>Vender</strong>
+
+          <div class="sw-advanced" id="swAdvanced">
+            <div class="sw-field">
+              <label for="swQuartos">Quartos</label>
+              <select id="swQuartos">
+                <option value="">Indiferente</option>
+                <option>1+</option>
+                <option>2+</option>
+                <option>3+</option>
+                <option>4+</option>
+              </select>
             </div>
-            <small>Anunciar imóvel</small>
-          </div>
-          <div class="concierge-item" onclick="openWA('Gostaria de uma avaliação do meu imóvel')">
-            <div class="concierge-head">
-              <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-              <strong>Avaliar</strong>
+            <div class="sw-field">
+              <label for="swSuites">Suítes</label>
+              <select id="swSuites">
+                <option value="">Indiferente</option>
+                <option>1+</option>
+                <option>2+</option>
+                <option>3+</option>
+              </select>
             </div>
-            <small>Descobrir valor</small>
+            <div class="sw-field">
+              <label for="swVagas">Vagas de garagem</label>
+              <select id="swVagas">
+                <option value="">Indiferente</option>
+                <option>1+</option>
+                <option>2+</option>
+                <option>3+</option>
+              </select>
+            </div>
+            <div class="sw-field">
+              <label for="swCodigo">Código do imóvel</label>
+              <input type="text" id="swCodigo" placeholder="Ex: AP09" />
+            </div>
+            <label class="sw-toggle-chip" id="swPiscinaChip" for="swPiscina">
+              <input type="checkbox" id="swPiscina" onchange="document.getElementById('swPiscinaChip').classList.toggle('checked', this.checked)" />
+              Com piscina
+            </label>
           </div>
         </div>
       </div>
@@ -486,29 +637,29 @@
           <span class="eyebrow">Oportunidades em Destaque</span>
           <h2>Imóveis Selecionados</h2>
         </div>
-        <a href="https://wa.me/5535988163157?text=Quero%20receber%20o%20catálogo%20completo" target="_blank" class="btn-link">Ver catálogo →</a>
+        <a href="#" onclick="openInstagram('Quero receber o catálogo completo de imóveis'); return false;" class="btn-link">Ver catálogo →</a>
       </div>
 
       <div class="imoveis-grid">
-        <article class="card">
+        <article class="card" data-finalidade="Comprar" data-tipo="Casa" data-bairro="Santa Mônica" data-preco="1850000" data-quartos="4" data-suites="2" data-vagas="4" data-piscina="true" data-codigo="MV01">
           <div class="card-media">
             <span class="card-tag">Alto Padrão</span>
-            <img src="imovel-1.jpg" alt="Casa em Condomínio - Reserva da Serra">
+            <img src="imovel-1.jpg" alt="Casa em Condomínio - Santa Mônica">
           </div>
           <div class="card-body">
-            <div class="card-loc">Reserva da Serra · São Lourenço</div>
+            <div class="card-loc">Santa Mônica · São Lourenço</div>
             <h3>Casa Térrea Integrada</h3>
             <div class="card-meta">
               <span>420 m²</span> • <span>4 Quartos</span> • <span>2 Suítes</span>
             </div>
             <div class="card-footer">
               <div class="card-price">R$ 1.850.000</div>
-              <button onclick="openWA('Tenho interesse na Casa no Reserva da Serra')" class="btn-link">Tenho interesse →</button>
+              <button onclick="openInstagram('Tenho interesse na Casa em Santa Mônica')" class="btn-link">Tenho interesse →</button>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-finalidade="Comprar" data-tipo="Casa" data-bairro="Federal" data-preco="320000" data-quartos="2" data-suites="0" data-vagas="1" data-piscina="false" data-codigo="MV02">
           <div class="card-media">
             <span class="card-tag">Residencial</span>
             <img src="imovel-2.jpg" alt="Casa no Bairro Federal">
@@ -521,12 +672,12 @@
             </div>
             <div class="card-footer">
               <div class="card-price">R$ 320.000</div>
-              <button onclick="openWA('Tenho interesse na Casa no Bairro Federal')" class="btn-link">Tenho interesse →</button>
+              <button onclick="openInstagram('Tenho interesse na Casa no Bairro Federal')" class="btn-link">Tenho interesse →</button>
             </div>
           </div>
         </article>
 
-        <article class="card">
+        <article class="card" data-finalidade="Comprar" data-tipo="Casa" data-bairro="Vila Nova" data-preco="590000" data-quartos="3" data-suites="1" data-vagas="2" data-piscina="false" data-codigo="MV03">
           <div class="card-media">
             <span class="card-tag">Lançamento</span>
             <img src="imovel-3.jpg" alt="Sobrado na Vila Nova">
@@ -539,10 +690,16 @@
             </div>
             <div class="card-footer">
               <div class="card-price">R$ 590.000</div>
-              <button onclick="openWA('Tenho interesse no Sobrado na Vila Nova')" class="btn-link">Tenho interesse →</button>
+              <button onclick="openInstagram('Tenho interesse no Sobrado na Vila Nova')" class="btn-link">Tenho interesse →</button>
             </div>
           </div>
         </article>
+      </div>
+
+      <div id="imoveis-empty" style="display:none; text-align:center; padding:50px 20px; background:var(--white); border-radius:var(--radius); margin-top:32px;">
+        <p style="font-family:'Fraunces', serif; font-size:20px; color:var(--green-deep); margin-bottom:10px;">Nenhum imóvel do catálogo combina com essa busca.</p>
+        <p style="font-size:14px; color:#565f58; margin-bottom:20px;">Conte pro Matheus Dias o que você procura e receba opções que ainda não estão no site.</p>
+        <button class="btn btn-brass" onclick="pedirParaCorretor()">Falar com o corretor</button>
       </div>
     </div>
   </section>
@@ -557,7 +714,7 @@
         </div>
         <div class="depoimentos-grid">
           <div class="depoimento-card">
-            "O Marcos conduziu toda a negociação da nossa casa com uma clareza incrível. Transmite muita confiança e cuidou de cada detalhe da papelada."
+            "O Matheus conduziu toda a negociação da nossa casa com uma clareza incrível. Transmite muita confiança e cuidou de cada detalhe da papelada."
             <span class="depoimento-autor">— Ricardo & Família</span>
           </div>
           <div class="depoimento-card">
@@ -572,7 +729,9 @@
   <section class="sobre" id="sobre">
     <div class="wrap sobre-grid">
       <div class="sobre-photo-wrap">
-        <img src="corretor.png" alt="Marcos Vinícius Corretor de Imóveis">
+        <div class="sobre-photo-frame">
+          <img src="corretor.png" alt="Matheus Dias Corretor de Imóveis">
+        </div>
       </div>
       <div class="sobre-text">
         <span class="eyebrow">Sobre o Corretor</span>
@@ -612,7 +771,7 @@
       <span class="eyebrow">Atendimento Direto</span>
       <h2>Pronto para dar o próximo passo?</h2>
       <p style="max-width:480px; margin:12px auto 24px; color:#505852; font-size:14px;">Envie uma mensagem e receba um atendimento personalizado para o seu objetivo imobiliário.</p>
-      <a class="btn btn-brass" href="https://wa.me/5535988163157?text=Olá,%20quero%20encontrar%20meu%20imóvel" target="_blank">Conversar no WhatsApp</a>
+      <a class="btn btn-brass" href="#" onclick="openInstagram('Olá, quero encontrar meu imóvel'); return false;">Chamar no Instagram</a>
     </div>
   </section>
 </main>
@@ -621,22 +780,22 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <strong>Marcos Vinícius</strong>
+        <strong>Matheus Dias</strong>
         <p>Corretor de Imóveis em São Lourenço, MG.<br>Intermediação com responsabilidade e transparência.</p>
       </div>
       <div>
         <strong>Contato & Registro</strong>
-        <p>WhatsApp: (35) 98816-3157<br>São Lourenço — Minas Gerais<br>CRECI-MG Credenciado</p>
+        <p>Instagram: <a href="https://www.instagram.com/matheusdias_corretor/" target="_blank" rel="noopener" style="color:var(--brass-soft);">@matheusdias_corretor</a><br>São Lourenço — Minas Gerais<br>CRECI-MG Credenciado</p>
       </div>
     </div>
     <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; text-align:center; font-size:11px; opacity:0.65;">
-      © 2026 Marcos Vinícius Corretor de Imóveis. Todos os direitos reservados.
+      © 2026 Matheus Dias Corretor de Imóveis. Todos os direitos reservados.
     </div>
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5535988163157" target="_blank" aria-label="WhatsApp">
-  <svg width="24" height="24" viewBox="0 0 32 32" fill="white"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.42.71 4.68 1.933 6.573L4 29l7.61-1.897A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.363l-.357-.212-4.516 1.126 1.15-4.4-.233-.37A9.77 9.77 0 0 1 5.818 15c0-5.616 4.567-10.182 10.183-10.182S26.182 9.384 26.182 15 21.617 24.818 16.001 24.818zm5.578-7.63c-.306-.153-1.81-.893-2.09-.994-.28-.102-.484-.153-.688.153-.204.306-.79.994-.968 1.199-.178.204-.357.23-.663.077-.306-.153-1.293-.477-2.464-1.523-.911-.812-1.526-1.815-1.705-2.121-.178-.306-.019-.472.134-.624.138-.137.306-.357.459-.535.153-.178.204-.306.306-.51.102-.204.051-.383-.026-.535-.077-.153-.688-1.658-.943-2.271-.248-.596-.5-.516-.688-.526-.178-.009-.382-.011-.586-.011s-.535.077-.815.383c-.28.306-1.069 1.045-1.069 2.55 0 1.505 1.094 2.96 1.246 3.164.153.204 2.153 3.288 5.217 4.61.729.315 1.298.503 1.742.643.732.233 1.398.2 1.925.121.587-.088 1.81-.74 2.065-1.454.255-.714.255-1.326.178-1.454-.076-.128-.28-.204-.586-.357z"/></svg>
+<a class="ig-float" href="#" onclick="openInstagram('Olá! Vi seu site e quero saber mais sobre os imóveis.'); return false;" aria-label="Instagram">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="white" stroke="none"/></svg>
 </a>
 
 <script>
@@ -661,10 +820,121 @@
     });
   });
 
-  function openWA(message) {
-    const phone = '5535988163157';
-    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+  const IG_USERNAME = 'matheusdias_corretor';
+
+  function showToast(text) {
+    let toast = document.getElementById('igToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'igToast';
+      toast.className = 'ig-toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove('show'), 3600);
+  }
+
+  function openInstagram(message) {
+    if (message && navigator.clipboard) {
+      navigator.clipboard.writeText(message).then(() => {
+        showToast('Mensagem copiada! Cole no chat do Instagram.');
+      }).catch(() => {
+        showToast('Abrindo o Instagram do Matheus Dias.');
+      });
+    } else {
+      showToast('Abrindo o Instagram do Matheus Dias.');
+    }
+    window.open(`https://ig.me/m/${IG_USERNAME}`, '_blank');
+  }
+
+  let finalidadeAtual = 'Comprar';
+
+  function setFinalidade(btn) {
+    document.querySelectorAll('.sw-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    finalidadeAtual = btn.dataset.finalidade;
+  }
+
+  function toggleAdvanced() {
+    const panel = document.getElementById('swAdvanced');
+    const toggle = document.getElementById('swAdvToggle');
+    const isOpen = panel.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+  }
+
+  function buscarImoveis() {
+    const tipo = document.getElementById('swTipo').value;
+    const bairro = document.getElementById('swBairro').value;
+    const faixa = document.getElementById('swFaixa').value;
+    const quartos = document.getElementById('swQuartos').value;
+    const suites = document.getElementById('swSuites').value;
+    const vagas = document.getElementById('swVagas').value;
+    const piscina = document.getElementById('swPiscina').checked;
+    const codigo = document.getElementById('swCodigo').value.trim().toLowerCase();
+
+    const faixaRanges = {
+      'Até R$ 300 mil': [0, 300000],
+      'R$ 300 mil a R$ 500 mil': [300000, 500000],
+      'R$ 500 mil a R$ 800 mil': [500000, 800000],
+      'R$ 800 mil a R$ 1,2 milhão': [800000, 1200000],
+      'Acima de R$ 1,2 milhão': [1200000, Infinity]
+    };
+
+    const cards = document.querySelectorAll('#imoveis .card');
+    let visiveis = 0;
+
+    cards.forEach(card => {
+      let ok = true;
+      if (finalidadeAtual !== card.dataset.finalidade) ok = false;
+      if (tipo && tipo !== card.dataset.tipo) ok = false;
+      if (bairro && bairro !== card.dataset.bairro) ok = false;
+      if (ok && faixa) {
+        const [min, max] = faixaRanges[faixa];
+        const preco = Number(card.dataset.preco);
+        if (preco < min || preco > max) ok = false;
+      }
+      if (ok && quartos && Number(card.dataset.quartos) < parseInt(quartos)) ok = false;
+      if (ok && suites && Number(card.dataset.suites) < parseInt(suites)) ok = false;
+      if (ok && vagas && Number(card.dataset.vagas) < parseInt(vagas)) ok = false;
+      if (ok && piscina && card.dataset.piscina !== 'true') ok = false;
+      if (ok && codigo && !card.dataset.codigo.toLowerCase().includes(codigo)) ok = false;
+
+      card.style.display = ok ? '' : 'none';
+      if (ok) visiveis++;
+    });
+
+    document.getElementById('imoveis-empty').style.display = visiveis === 0 ? 'block' : 'none';
+    document.getElementById('imoveis').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function limparFiltros() {
+    document.getElementById('swTipo').value = '';
+    document.getElementById('swBairro').value = '';
+    document.getElementById('swFaixa').value = '';
+    document.getElementById('swQuartos').value = '';
+    document.getElementById('swSuites').value = '';
+    document.getElementById('swVagas').value = '';
+    document.getElementById('swCodigo').value = '';
+    document.getElementById('swPiscina').checked = false;
+    document.getElementById('swPiscinaChip').classList.remove('checked');
+    document.querySelectorAll('#imoveis .card').forEach(card => card.style.display = '');
+    document.getElementById('imoveis-empty').style.display = 'none';
+  }
+
+  function pedirParaCorretor() {
+    const val = id => document.getElementById(id).value.trim();
+    const partes = [`Olá! Procurei no site um imóvel para *${finalidadeAtual}* em São Lourenço, mas não encontrei o que preciso.`];
+    if (val('swTipo')) partes.push(`Tipo: ${val('swTipo')}`);
+    if (val('swBairro')) partes.push(`Bairro: ${val('swBairro')}`);
+    if (val('swFaixa')) partes.push(`Faixa de preço: ${val('swFaixa')}`);
+    if (val('swQuartos')) partes.push(`Quartos: ${val('swQuartos')}`);
+    if (val('swSuites')) partes.push(`Suítes: ${val('swSuites')}`);
+    if (val('swVagas')) partes.push(`Vagas de garagem: ${val('swVagas')}`);
+    if (document.getElementById('swPiscina').checked) partes.push('Com piscina');
+    if (val('swCodigo')) partes.push(`Código: ${val('swCodigo')}`);
+    openInstagram(partes.join('\n'));
   }
 </script>
 
